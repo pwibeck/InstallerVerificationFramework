@@ -18,7 +18,7 @@ namespace InstallerVerificationLibrary.Data
         {
             unchecked
             {
-                var hashCode = (hashCode*397) ^ (Key != null ? Key.GetHashCode() : 0);
+                var hashCode = (Key != null ? Key.GetHashCode() : 0);
                 hashCode = (hashCode*397) ^ (Data != null ? Data.GetHashCode() : 0);
                 hashCode = (hashCode*397) ^ (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode*397) ^ (int) DataCmpMethod;
