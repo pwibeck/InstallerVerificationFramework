@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<msi id="Installer2">
+  <include ref="CommonProperties.xml" />
+  <features>
+    <feature name="Feature1">
+      <directory path="[INSTALLFOLDER]" />
+      <file path="[INSTALLFOLDER]\Payload1.txt" />
+      <registrykey key="HKCU\Software\Installer2" />
+      <registryvalue key="HKCU\Software\Installer2" name="SomeIntegerValue" data="1" />
+      <registryvalue key="HKCU\Software\Installer2" name="(Default)" data="Hi" />
+    </feature>
+  </features>
+  <properties>
+    <property id="INSTALLFOLDER" type="Parameter" parameterID="INSTALLFOLDER" />
+  </properties>
+</msi>

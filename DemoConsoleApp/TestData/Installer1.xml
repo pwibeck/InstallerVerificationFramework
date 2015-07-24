@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<msi id="Installer1">
+  <include ref="CommonProperties.xml" />
+  <features>
+    <feature name="Feature1">
+      <directory path="[INSTALLFOLDER]" />
+      <file path="[INSTALLFOLDER]\Payload1.txt" />
+      <file path="[INSTALLFOLDER]\EmptyFile.xml" />
+      <registrykey key="HKCU\Software\Installer1" />
+      <registryvalue key="HKCU\Software\Installer1" name="SomeIntegerValue" data="1" />
+      <registryvalue key="HKCU\Software\Installer1" name="(Default)" data="Hi there" />
+    </feature>
+    <feature name="Feature2">
+      <directory path="[INSTALLFOLDER]"/>
+      <file path="[INSTALLFOLDER]\PayLoadAssembly.exe" fileVersion="1.0.0.0" />
+      <file path="[INSTALLFOLDER]\Client.exe"/>
+      <startmenu allusers="true" name="New Client"/>
+    </feature>
+  </features>
+  <properties>
+    <property id="INSTALLFOLDER" type="Parameter" parameterID="INSTALLFOLDER" />
+  </properties>
+</msi>

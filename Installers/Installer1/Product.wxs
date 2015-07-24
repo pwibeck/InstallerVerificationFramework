@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="62AA8B8D-CDC3-41EE-8C80-CB832AF5F0B0" Name="Installer1" Language="1033" Version="1.0.0.0" Manufacturer="Peter Wibeck" UpgradeCode="7bc627cd-27b8-4821-ae67-094ffb38ab6f">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Media Id='1' Cabinet='Installer1.cab' EmbedCab='yes' />
+    
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Installation1">
+          <Component Id="Payload1" Guid="*">
+            <File Id="Payload1File" Name="Payload1.txt" Source="Payload1.txt" />
+          </Component>
+          <Component Id="EmptyFile" Guid="*">
+            <File Id="EmptyFile" Name="EmptyFile.xml" Source="EmptyFile.txt" />
+          </Component>
+          <Component Id="RegistryEntries" Guid="*">
+            <RegistryKey Root="HKCU" Key="Software\Installer1">
+              <RegistryValue Type="integer" Name="SomeIntegerValue" Value="1" KeyPath="yes"/>
+              <RegistryValue Type="string" Value="Hi there"/>
+            </RegistryKey>
+          </Component>
+          <Component Id="ClientComp" Guid="*">
+            <File Id="File6" Name="Client.exe" DiskId="1" Source="EmptyFile.txt" />
+            <Shortcut Id="NewShortcut1" Directory="ProgramMenuFolder" Name="New Client" Description="The new client" IconIndex="0" Show="normal" Advertise="yes" />
+          </Component>
+          <Component Id="PayLoadAssemblyComp" Guid="*">
+            <File Id="PayLoadAssemblyFile" Name="PayLoadAssembly.exe" DiskId="1" Source="PayLoadAssembly.exe" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder" />
+    </Directory>
+
+
+    <Feature Id="Feature1" Title="Feature1" Level="1">
+			<ComponentRef Id="Payload1" />
+      <ComponentRef Id="EmptyFile" />
+      <ComponentRef Id="RegistryEntries"/>
+		</Feature>
+
+    <Feature Id="Feature2" Title="Feature2" Level="1">
+      <ComponentRef Id="ClientComp" />
+      <ComponentRef Id="PayLoadAssemblyComp" />
+    </Feature>
+    
+	</Product>
+</Wix>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<properties>
+  <property type="SpecialFolderPath" id="ProgramFilesFolder2" value="ProgramFiles"/>
+  <property type="SpecialFolderPath" id="CommonProgramFilesFolder2" value="CommonProgramFiles"/>  
+  <property type="EnvironmentVariable" id="Windows" value="windir" />
+  <property type="Text" id="UnInstallRegistry" value="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"/>
+  <property type="RegistryValue" id="OfficeInstallPath" key="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\OUTLOOK.EXE" valueName="Path" valueIfNotFound="Office path not found"/>
+  <property type="WindowsInstaller" id="CommonFilesFolder" />
+  <property type="WindowsInstaller" id="VersionNT" valueIfNotFound="0"/>
+  <property type="WindowsInstaller" id="VersionNT64" valueIfNotFound="0"/>
+  <property type="WindowsInstaller" id="WindowsBuild" />
+  <property type="WindowsInstaller" id="ServicePackLevel" />
+  <property type="WindowsInstaller" id="ServicePackLevelMinor" />
+  <property type="WindowsInstaller" id="MsiNTProductType" />
+  <property type="WindowsInstaller" id="MsiNTSuiteEnterprise" valueIfNotFound=""/>
+  <property type="WindowsInstaller" id="WindowsFolder" />
+  <property type="WindowsInstaller" id="WindowsVolume" />
+  <property type="WindowsInstaller" id="System64Folder" />
+  <property type="WindowsInstaller" id="SystemFolder" />
+  <property type="WindowsInstaller" id="RemoteAdminTS" />
+  <property type="WindowsInstaller" id="TempFolder" />
+  <property type="WindowsInstaller" id="ProgramFilesFolder" />
+  <property type="WindowsInstaller" id="ProgramFiles64Folder" valueIfNotFound=""/>
+  <property type="WindowsInstaller" id="CommonFiles64Folder" valueIfNotFound=""/>
+  <property type="WindowsInstaller" id="AppDataFolder" />
+  <property type="WindowsInstaller" id="FavoritesFolder" />
+  <property type="WindowsInstaller" id="NetHoodFolder" />
+  <property type="WindowsInstaller" id="PersonalFolder" />
+  <property type="WindowsInstaller" id="PrintHoodFolder" />
+  <property type="WindowsInstaller" id="RecentFolder" />
+  <property type="WindowsInstaller" id="SendToFolder" />
+  <property type="WindowsInstaller" id="TemplateFolder" />
+  <property type="WindowsInstaller" id="CommonAppDataFolder" />
+  <property type="WindowsInstaller" id="LocalAppDataFolder" />
+  <property type="WindowsInstaller" id="MyPicturesFolder" />
+  <property type="WindowsInstaller" id="AdminToolsFolder" />
+  <property type="WindowsInstaller" id="StartupFolder" />
+  <property type="WindowsInstaller" id="ProgramMenuFolder" />
+  <property type="WindowsInstaller" id="StartMenuFolder" />
+  <property type="WindowsInstaller" id="DesktopFolder" />
+  <property type="WindowsInstaller" id="FontsFolder" />
+  <property type="WindowsInstaller" id="MsiAMD64" valueIfNotFound="0"/>
+  <property type="WindowsInstaller" id="Msix64" valueIfNotFound="0"/>
+  <property type="WindowsInstaller" id="Intel" />
+  <property type="WindowsInstaller" id="ComputerName" />
+</properties>

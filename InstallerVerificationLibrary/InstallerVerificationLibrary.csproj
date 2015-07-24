@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E15822CF-8321-4400-8AE4-C79C94D518E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InstallerVerificationLibrary</RootNamespace>
+    <AssemblyName>InstallerVerificationLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Check\CheckResult.cs" />
+    <Compile Include="CollectionTools.cs" />
+    <Compile Include="Data\PluginData.cs" />
+    <Compile Include="Loader\DirectoryTestDataLoader.cs" />
+    <Compile Include="Loader\MsiFeatureTestDataLoader.cs" />
+    <Compile Include="Logging\BaseLogListener.cs" />
+    <Compile Include="MsiDatabase.cs" />
+    <Compile Include="MsiInstaller.cs" />
+    <Compile Include="ProcmonDataExtractor.cs" />
+    <Compile Include="CheckerDataTypeLoader.cs" />
+    <Compile Include="Attribute\TestDataLoaderAttribute.cs" />
+    <Compile Include="Attribute\DataTypeAttribute.cs" />
+    <Compile Include="Attribute\TestCheckAttribute.cs" />
+    <Compile Include="Check\BaseCheck.cs" />
+    <Compile Include="Check\DirectoryCheck.cs" />
+    <Compile Include="Check\FileCheck.cs" />
+    <Compile Include="Check\ICheck.cs" />
+    <Compile Include="Check\RegistryValueCheck.cs" />
+    <Compile Include="Check\RegistryKeyCheck.cs" />
+    <Compile Include="Check\StartMenuCheck.cs" />
+    <Compile Include="Tools\ManualUnInstallationTool.cs" />
+    <Compile Include="Data\DirectoryData.cs" />
+    <Compile Include="Data\FileData.cs" />
+    <Compile Include="Data\RegistryValueData.cs" />
+    <Compile Include="Data\RegistryKeyData.cs" />
+    <Compile Include="Data\StartMenuData.cs" />
+    <Compile Include="Data\BaseTestData.cs" />
+    <Compile Include="Loader\BaseTestDataLoader.cs" />
+    <Compile Include="Loader\FileTestDataLoader.cs" />
+    <Compile Include="Loader\ILoader.cs" />
+    <Compile Include="Loader\RegistryValueTestDataLoader.cs" />
+    <Compile Include="Loader\RegistryKeyTestDataLoader.cs" />
+    <Compile Include="Loader\StartMenuTestDataLoader.cs" />
+    <Compile Include="Tools\ApplicationTool.cs" />
+    <Compile Include="Tools\DatabaseTool.cs" />
+    <Compile Include="Tools\FileSystemTool.cs" />
+    <Compile Include="Tools\RegistryTool.cs" />
+    <Compile Include="Tools\WindowsServiceTool.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="InstallerVerificationLibraryException.cs" />
+    <Compile Include="FileChange.cs" />
+    <Compile Include="Tools\FuzzTool.cs" />
+    <Compile Include="Logging\ConsoleLogListener.cs" />
+    <Compile Include="Logging\DebugLogListener.cs" />
+    <Compile Include="Logging\EventLogListener.cs" />
+    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\LogData.cs" />
+    <Compile Include="Logging\StreamLogListener.cs" />
+    <Compile Include="Logging\TextFileLogListener.cs" />
+    <Compile Include="Logging\TraceLogListener.cs" />
+    <Compile Include="MsiTestBed.cs" />
+    <Compile Include="ProcmonController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistryChange.cs" />
+    <Compile Include="SerializableDictionary.cs" />
+    <Compile Include="Setup\SetupConfig.cs" />
+    <Compile Include="Setup\SetupConfigBaseMsi.cs" />
+    <Compile Include="Setup\SetupConfigComponentData.cs" />
+    <Compile Include="Setup\SetupConfigParameterData.cs" />
+    <Compile Include="Verifiers\Verifier.cs" />
+    <Compile Include="Verifiers\DataProperty.cs" />
+    <Compile Include="Verifiers\DataPropertyTool.cs" />
+    <Compile Include="Verifiers\DataPropertyType.cs" />
+    <Compile Include="Verifiers\Feature.cs" />
+    <Compile Include="Verifiers\InstallChainerComponent.cs" />
+    <Compile Include="Verifiers\MsiFile.cs" />
+    <Compile Include="Verifiers\Parameter.cs" />
+    <Compile Include="Verifiers\TestDataLoader.cs" />
+    <Compile Include="WindowsInstallerPropertyExtractor.cs" />
+    <Compile Include="XmlTools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NetFwTypeLib">
+      <Guid>{58FBCF7C-E7A9-467C-80B3-FC65E8FCCA08}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NativeWrappers\NativeWrappers.csproj">
+      <Project>{f799a0ce-8848-4102-be96-a38f58c18729}</Project>
+      <Name>NativeWrappers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
